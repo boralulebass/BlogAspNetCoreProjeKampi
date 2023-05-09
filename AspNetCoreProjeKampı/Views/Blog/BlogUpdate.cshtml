@@ -1,0 +1,39 @@
+﻿@model EntityLayer.Concrete.Blog
+
+@{
+    ViewData["Title"] = "BlogUpdate";
+    Layout = "~/Views/Writer/WriterLayout.cshtml";
+}
+
+<h1>Düzenle</h1>
+<br />
+@using (Html.BeginForm("BlogUpdate", "Blog", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.BlogID)
+    @Html.HiddenFor(x=>x.BlogDate)
+    @Html.HiddenFor(x=>x.BlogStatus)
+    @Html.HiddenFor(x=>x.WriterID)
+    @Html.HiddenFor(x=>x.AppUserID)
+    @Html.Label("Blog Başlığı")
+    @Html.TextBoxFor(x=>x.BlogTitle, new{@class="form-control"})
+    @Html.ValidationMessageFor(x=>x.BlogTitle)
+    <br />
+    @Html.Label("Görsel")
+    @Html.TextBoxFor(x=>x.BlogImage, new{@class="form-control"})
+    @Html.ValidationMessageFor(x=>x.BlogImage)
+    <br />
+    @Html.Label("Küçük Görsel")
+    @Html.TextBoxFor(x=>x.BlogThumbnailImage, new{@class="form-control"})
+    @Html.ValidationMessageFor(x=>x.BlogThumbnailImage)
+    <br />
+    @Html.Label("Kategori")
+    @Html.DropDownListFor(x=>x.CategoryID,(List<SelectListItem>)ViewBag.cv, new{@class="form-control"})
+    @Html.ValidationMessageFor(x=>x.CategoryID)
+    <br />
+    @Html.Label("İçerik")
+    @Html.TextAreaFor(x=>x.BlogContent,30,3, new{@class="form-control"})
+    @Html.ValidationMessageFor(x=>x.BlogContent)
+    <br />
+    <button class="btn btn-dark">Değişiklikleri Kaydet</button>
+    <br />
+}

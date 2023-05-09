@@ -1,0 +1,13 @@
+﻿@using AspNetCoreProjeKampı.Controllers
+@model Class1
+@{
+    ViewData["Title"] = "EditEmployee";
+    Layout = "~/Views/_AdminsLayout/AdminsLayout.cshtml";
+}
+<form method="post">
+    <label>Çalışan Adı Soyadı</label>
+    <input type="text" asp-for="Name" class="form-control">
+    <br>
+    <button type="submit" class="btn btn-info">Kaydet</button>
+</form>
+

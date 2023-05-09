@@ -1,0 +1,28 @@
+﻿@using AspNetCoreProjeKampı.Areas.Admin.Models
+@model RoleUpdateViewModel
+@{
+    ViewData["Title"] = "UpdateRole";
+    Layout = "~/Views/_AdminsLayout/AdminsLayout.cshtml";
+}
+
+<h1>Rol Düzenleme Sayfası</h1>
+
+<form method="post">
+    <div class="form-group">
+        <div class="row">
+            <input type="hidden" name="Id" class="form-control" value="@Model.Id" />
+            <div class="col-3">
+                <h3> Rol Başlığı </h3>
+                <input type="text" name="name" class="form-control" value="@Model.name" />
+            </div>
+            <div class="col-3">
+                <div class="col-3">
+                    <h3> Güncelle </h3>
+                    <button class="btn btn-success">Güncelle</button>
+                </div>
+
+            </div>
+        </div>
+        <br />
+    </div>
+</form>

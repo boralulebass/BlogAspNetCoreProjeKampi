@@ -1,0 +1,27 @@
+﻿@using EntityLayer.Concrete
+@using AspNetCoreProjeKampı.Models
+@model List<Message2>
+@{
+    ViewData["Title"] = "Sendbox";
+    Layout = "~/Views/Writer/WriterLayout.cshtml";
+}
+
+<h1>Giden Kutusu</h1>
+<table class="table table-bordered" style="background-color:white">
+    <tr>
+        <th>Konu</th>
+        <th>Kime</th>
+        <th>Tarih</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.Subject</th>
+            <th>@item.ReceiverUser.NameSurname</th>
+            <td>@(((DateTime)item.MessageDate).ToString("D"))</td>
+            <td><a href="/Message/MessageDetails/@item.MessageID" class="btn btn-outline-primary">Mesajı Aç</a></td>
+        </tr>
+    }
+</table>
+<br />
+<a href="/Message/AddMessage/" class="btn btn-dark">Yeni Mesaj Oluştur</a>

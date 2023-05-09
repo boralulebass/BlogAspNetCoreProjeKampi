@@ -1,0 +1,17 @@
+﻿@using EntityLayer.Concrete
+@model Message2
+@{
+    ViewData["Title"] = "MessageDetails";
+    Layout = "~/Views/Writer/WriterLayout.cshtml";
+}
+
+<h1>Mesajı Oku</h1>
+<br />
+@Html.HiddenFor(x=>x.MessageID)
+@Html.Label("Konu:")
+@Html.TextBoxFor(x=>x.Subject, new{@class="form-control", @disabled = "disabled", @style="background-color:white"})
+<br />
+@Html.Label("Mesaj:")
+@Html.TextAreaFor(x=>x.MessageText,30,3, new{@class="form-control", @readonly="readonly", @style="background-color:white"})
+<br />
+<br />

@@ -1,0 +1,76 @@
+﻿@using EntityLayer.Concrete
+@model Message2
+@{
+    ViewData["Title"] = "MessageDetails";
+    Layout = "~/Views/_AdminsLayout/AdminsLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+
+
+
+<body>
+
+    <div class="wrapper wrapper-content">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="ibox ">
+                    <div class="ibox-content mailbox-content">
+                        <div class="file-manager">
+                            <a class="btn btn-block btn-primary compose-mail" href="/Admin/AdminMessage/NewMessage/">Mesaj Oluştur</a>
+                            <div class="space-25"></div>
+                            <h5>Klasörler</h5>
+                            <ul class="folder-list m-b-md" style="padding: 0">
+                                <li><a href="/Admin/AdminMessage/Inbox/"> <i class="fa fa-inbox "></i> Gelen Mesajlar </a></li>
+                                <li><a href="/Admin/AdminMessage/Sendbox/"> <i class="fa fa-envelope-o"></i> Giden Mesajlar</a></li>
+
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 animated fadeInRight">
+                <div class="mail-box-header">
+                    <div class="mail-box-header">
+                        <h2>
+                            Mesaj Detay
+                        </h2>
+                    </div>
+                </div>
+                <div class="mail-box">
+                    <div class="mail-text h-200">
+
+                        <div class="summernote">
+                            <div class="container">
+                                <h3>Konu: @ViewBag.Subject</h3> <br />
+                                @ViewBag.Text - @ViewBag.Date
+                                <br />
+                                <br />
+                            </div>
+
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="mail-body text-right tooltip-demo">
+                        <a href="/Admin/AdminMessage/MessageDelete/@Model.MessageID/" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Mesajı Sil"><i class="fa fa-times"></i> Sil</a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/plugins/summernote/summernote-bs4.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $('.summernote').summernote();
+
+        });
+
+    </script>
+</body>
+
+</html>

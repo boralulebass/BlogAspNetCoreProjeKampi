@@ -1,0 +1,61 @@
+﻿@using EntityLayer.Concrete
+@model List<Message2>
+@{
+    ViewData["Title"] = "Inbox";
+    Layout = "~/Views/_AdminsLayout/AdminsLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div class="wrapper wrapper-content">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="ibox ">
+                    <div class="ibox-content mailbox-content">
+                        <div class="file-manager">
+                            <a class="btn btn-block btn-primary compose-mail" href="/Admin/AdminMessage/NewMessage/">Mesaj Oluştur</a>
+                            <div class="space-25"></div>
+                            <h5>Klasörler</h5>
+                            <ul class="folder-list m-b-md" style="padding: 0">
+                                <li><a href="/Admin/AdminMessage/Inbox/"> <i class="fa fa-inbox "></i> Gelen Mesajlar </a></li>
+                                <li><a href="/Admin/AdminMessage/Sendbox/"> <i class="fa fa-envelope-o"></i> Giden Mesajlar</a></li>
+
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 animated fadeInRight">
+                <div class="mail-box-header">
+                    <h2>
+                        Gelen Kutusu (@ViewBag.count)
+                    </h2>
+                    <div class="mail-tools tooltip-demo m-t-md">
+                        <a href="/Admin/AdminMessage/Inbox/" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="left" title="Refresh inbox"><i class="fa fa-refresh"></i> Yenile</a>
+                    </div>
+                </div>
+                <div class="mail-box">
+                    <table class="table table-hover table-mail">
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr class="unread">
+                                    <td class="mail-ontact"><a href="/Admin/AdminMessage/MessageDetails/@item.MessageID">@item.SenderUser.NameSurname</a></td>
+                                    <td class="mail-subject"><a href="/Admin/AdminMessage/MessageDetails/@item.MessageID">@item.Subject</a></td>
+                                    <td class="text-right mail-date">@item.MessageDate</td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+

@@ -1,0 +1,35 @@
+﻿@model EntityLayer.Concrete.Blog
+@{
+    ViewData["Title"] = "BlogAdd";
+    Layout = "~/Views/Writer/WriterLayout.cshtml";
+}
+
+<h1>Yeni Blog Girişi</h1>
+<br />
+@using (Html.BeginForm("BlogAdd", "Blog", FormMethod.Post))
+{
+    @Html.Label("Blog Başlığı")
+    @Html.TextBoxFor(x=>x.BlogTitle, new{@class="form-control"})
+    @Html.ValidationMessageFor(x=>x.BlogTitle)
+    <br />
+    @Html.Label("Görsel")
+    @Html.TextBoxFor(x=>x.BlogImage, new{@class="form-control"})
+    @Html.ValidationMessageFor(x=>x.BlogImage)
+    <br />
+    @Html.Label("Küçük Görsel")
+    @Html.TextBoxFor(x=>x.BlogThumbnailImage, new{@class="form-control"})
+    @Html.ValidationMessageFor(x=>x.BlogThumbnailImage)
+    <br />
+    @Html.Label("Kategori")
+    @Html.DropDownListFor(x => x.CategoryID , (List<SelectListItem>) ViewBag.cv, new {@class = "form-control" })
+    @Html.ValidationMessageFor(x=>x.CategoryID)
+    <br />
+    @Html.Label("İçerik")
+    @Html.TextAreaFor(x=>x.BlogContent,30,3, new{@class="form-control"})
+    @Html.ValidationMessageFor(x=>x.BlogContent)
+    <br />
+    <button class="btn btn-dark">Blog Oluştur</button>
+    <br />
+}
+
+

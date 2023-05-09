@@ -1,0 +1,71 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Blog>
+@{
+    ViewData["Title"] = "BlogDetails";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<body>
+	<!--//banner-->
+	<section class="banner-bottom">
+		<!--/blog-->
+		<div class="container">
+			<div class="row">
+				<!--left-->
+				<div class="col-lg-8 left-blog-info-w3layouts-agileits text-left">
+					@foreach(var item in Model)
+					{
+					<div class="blog-grid-top">
+						<div class="b-grid-top">
+							<div class="blog_info_left_grid">
+									<img src="~/web/images/b1.jpg" class="img-fluid" alt="">
+							</div>
+							<div class="blog-info-middle">
+								<ul>
+									<li>
+										<a href="#">
+												<i class="far fa-calendar-alt"></i> @(((DateTime)item.BlogDate).ToString("dd:MMM:yyyy"))
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<h3>
+							<a href="single.html">@item.BlogTitle </a>
+						</h3>
+						<p>
+							@item.BlogContent
+						</p>
+						<a href="/Blog/Index/" class="btn btn-primary read-m">Blog Listesi</a>
+					</div>
+                    }
+					@await Component.InvokeAsync("CommentListByBlog",new { id = ViewBag.Id})
+					@await Html.PartialAsync("/Views/Comment/PartialAddComment.cshtml")
+
+					
+
+				</div>
+
+				<!--//left-->
+				<!--right-->
+				<aside class="col-lg-4 agileits-w3ls-right-blog-con text-right">
+					<div class="right-blog-info text-left">
+						<div class="tech-btm">
+							<img src="~/web/images/banner1.jpg" class="img-fluid" alt="">
+						</div>
+						<h4>Bültenimize Abone Ol!</h4>
+						@await Html.PartialAsync("/Views/NewsLetter/SubscribeMail.cshtml")
+						@await Component.InvokeAsync("CategoryList")
+						@await Component.InvokeAsync("WriterLastBlog")
+					</div>
+
+				</aside>
+				<!--//right-->
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>
