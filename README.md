@@ -17,10 +17,6 @@ Apiler ile desteklenmiş bir blog sitesi projesi.
 
 ------------
 
-![](https://iili.io/JH2otXR.png)
-
-------------
-
 ![](https://iili.io/JH2oygt.png)
 
 ------------
