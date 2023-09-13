@@ -13,11 +13,11 @@ Apiler ile desteklenmiş bir blog sitesi projesi.
 
 ### Projeden Görseller
 
-
+![](https://iili.io/JH2omqN.png)
 
 ------------
 
-![](https://iili.io/JH2otXR.png)](https://iili.io/JH2omqN.png)
+![](https://iili.io/JH2otXR.png)
 
 ------------
 
