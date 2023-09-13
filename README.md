@@ -1,3 +1,48 @@
-Bu proje Murat Yücedağ eşliğinde AspNetCoreProjeKampı kursunda geliştirilmiştir.
+### Açıklama
+Asp.Net Core 5.0 ile hazırlanmış admin, yazar ve ziyaretçi arayüzlü
+Apiler ile desteklenmiş bir blog sitesi projesi.
+### Kullanılan Teknolojiler
+- C#
+- Core 5.0
+- Code First
+- MS SQL
+- Html, Css, Bootstrap
+- N Tier Architecture
+- Postman
+- Microsoft Identity
 
-ASP.Net Core 5.0 ile Entity Framework Core, N Tier Architechture mimarisi, API'lerle destekleyerek, Codefirst, veritabanı olarak SQL Server, Backend olarak C# programlama dili, Frontend arayüz tasarımında Html-Css-Bootstrap kullanılarak Visual Studio 2019 editöründe Kullanıcı, Yazar ve Admin panelli bir blog sitesi geliştirilmiştir.
+### Projeden Görseller
+
+
+
+------------
+
+![](https://iili.io/JH2otXR.png)](https://iili.io/JH2omqN.png)
+
+------------
+
+![](https://iili.io/JH2oygt.png)
+
+------------
+
+![](https://iili.io/JH2oZzv.png)
+
+------------
+
+![](https://iili.io/JH2oLmJ.png)
+
+------------
+
+![](https://iili.io/JH2otXR.png)
+
+------------
+
+![](https://iili.io/JH2oDsp.png)
+
+------------
+
+![](https://iili.io/JH2op1I.png)
+
+------------
+
+![](https://iili.io/JH2xFIf.png)
