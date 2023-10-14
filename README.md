@@ -1,5 +1,5 @@
 ### Açıklama
-Asp.Net Core 5.0 ile hazırlanmış admin, yazar ve ziyaretçi arayüzlü
+.Net Core 5.0 ile hazırlanmış admin, yazar ve ziyaretçi arayüzlü
 Apiler ile desteklenmiş bir blog sitesi projesi.
 ### Kullanılan Teknolojiler
 - C#
